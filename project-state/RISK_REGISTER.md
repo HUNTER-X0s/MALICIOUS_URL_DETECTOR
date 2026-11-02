@@ -1,0 +1,2 @@
+# Risk Register
+Antigravity: create and maintain a detailed risk register during M0-INIT. Mandatory risks to evaluate: SSRF; DNS rebinding; scanner escape; untrusted HTML/JS; extension update compromise; signing-key compromise; provider outage/stale feeds; poisoning; adversarial evasion; false positives/negatives; URL/log privacy leakage; tenant isolation; supply-chain compromise; model drift; unsafe agent/tool permissions; provider licensing limits; cost runaway; misleading trust UX; compliance and operational gaps.

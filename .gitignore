@@ -1,0 +1,36 @@
+# Secrets and sensitive local state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+private-data/
+customer-data/
+raw-malware/
+raw-scan-artifacts/
+
+# Local tooling/build output
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.next/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+.DS_Store
+Thumbs.db
+
+# Local IDE / logs
+.vscode/
+.idea/
+*.log
+*.tmp

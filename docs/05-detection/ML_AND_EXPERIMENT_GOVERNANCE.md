@@ -1,0 +1,3 @@
+# ML and experiment governance
+
+Establish non-ML baselines first. Version datasets, source terms, labels, feature code, training code, model, evaluation data and deployment config. Prevent label/time leakage and train/test contamination. Use reproducible experiments and data lineage. Evaluate calibration, subgroup performance, drift, adversarial robustness, latency, cost and model rollback. Restrict online learning from untrusted user submissions; quarantine and adjudicate labels. LLMs may assist analyst explanation/research but must not autonomously assert benignity or override trusted policy without validation. Keep human review and fallback behavior.

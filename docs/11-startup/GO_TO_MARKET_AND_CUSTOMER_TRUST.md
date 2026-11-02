@@ -1,0 +1,3 @@
+# Startup and customer trust readiness
+
+Validate customer segments, willingness to pay, top jobs, buying authority, procurement/security requirements, support expectations and competitors. Develop pricing only after provider cost, scan cost, support, abuse, infrastructure and retention economics are modelled. Define plans/rate limits honestly. Establish onboarding, help center, status page, privacy center, feedback, appeal/correction, customer support, abuse reporting, security contact and incident communications. Avoid unsupported “world's best”, “100% detection”, “zero false positives”, certifications or uptime claims. Trust requires externally verifiable evidence.

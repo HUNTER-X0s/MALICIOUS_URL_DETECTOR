@@ -1,0 +1,3 @@
+# CI/CD and release strategy
+
+Use protected branches, reviewed changes, required checks, reproducible builds, pinned dependencies, lockfiles, secret scanning, SAST, SCA, license review, SBOM, signed artifacts/provenance where justified, container/IaC scanning and staged environment promotion. Store least-privilege short-lived credentials in a managed secret service. Never put secrets in repo, prompts or logs. Separate dev/staging/prod. Use reversible database migrations, release feature flags and rollback plans. Require post-deploy smoke/health and alert checks. Production deployment, DNS changes and extension publishing require explicit owner approval.
