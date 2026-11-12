@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Dark Shield Background -->
+  <path d="M64 8 L112 28 C112 78 64 116 64 116 C64 116 16 78 16 28 Z" fill="#0f1117" stroke="#6366f1" stroke-width="4"/>
+  <!-- Inner Shield Glow -->
+  <path d="M64 18 L102 34 C102 74 64 104 64 104 C64 104 26 74 26 34 Z" fill="url(#shieldGrad)" opacity="0.25"/>
+  <!-- Checkmark / Sentinel Key Symbol -->
+  <path d="M52 64 L60 72 L78 50" fill="none" stroke="url(#glowGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+

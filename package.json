@@ -1,0 +1,14 @@
+{
+  "name": "urlsentinel-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "URLSentinel: Security-First Malicious URL Detection Platform",
+  "scripts": {
+    "test:backend": "z:\\URLSentinel\\.venv\\Scripts\\pytest.exe services/api/tests -v",
+    "dev:backend": "z:\\URLSentinel\\.venv\\Scripts\\uvicorn.exe urlsentinel.main:app --app-dir services/api/src --reload --port 8000"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

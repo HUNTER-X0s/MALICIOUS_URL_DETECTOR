@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Warning — URLSentinel Intercept</title>
+  <link rel="stylesheet" href="warning.css">
+</head>
+
+<body>
+  <div class="warning-container">
+    <div class="shield-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+    </div>
+
+    <div class="warning-header">
+      <span class="warning-pill">Threat Intercepted</span>
+      <h1 class="warning-title">Deceptive Website Blocked</h1>
+      <p class="warning-subtitle">URLSentinel blocked this page from loading because it demonstrates active indicators
+        of phishing, credential theft, or malicious delivery.</p>
+    </div>
+
+    <div class="threat-intel-box">
+      <div class="intel-header">
+        <span class="intel-label">Observed Threat Evidence</span>
+        <span class="risk-badge" id="riskBadge">Risk 95/100</span>
+      </div>
+      <div class="intel-content">
+        <div class="intel-reason" id="threatReason">Matches verified phishing signature targeting account credentials.
+        </div>
+        <div class="url-breakdown">
+          <span class="url-label">Intercepted Destination:</span>
+          <code class="url-code" id="blockedUrl">https://example.com</code>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <button class="primary-btn" id="returnSafeBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        Return to Safety (Recommended)
+      </button>
+
+      <div class="secondary-actions">
+        <button class="text-btn" id="reportFpBtn">Report False Positive</button>
+        <button class="text-btn danger-text" id="toggleOverrideBtn">Advanced (Proceed Anyway)</button>
+      </div>
+
+      <div class="override-panel hidden" id="overridePanel">
+        <p class="override-warning">Warning: Proceeding may compromise passwords, credit cards, or inject malware onto
+          your system.</p>
+        <button class="override-confirm-btn" id="confirmProceedBtn">I understand the risks, proceed anyway</button>
+      </div>
+    </div>
+
+    <div class="trust-footer">
+      <span>Protected in real-time by URLSentinel Zero-Trust Engine</span>
+    </div>
+  </div>
+
+  <script src="warning.js"></script>
+</body>
+
+</html>
