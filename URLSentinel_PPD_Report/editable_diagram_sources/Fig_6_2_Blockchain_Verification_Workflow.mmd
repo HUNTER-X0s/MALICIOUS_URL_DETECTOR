@@ -1,0 +1,15 @@
+sequenceDiagram
+    autonumber
+    participant Engine as URLSentinel Verdict Engine
+    participant Hash as Cryptographic Signer (SHA-256)
+    participant Contract as ThreatRegistry.sol (EVM)
+    participant Auditor as External Security Auditor
+
+    Engine->>Hash: Pass normalized URL, risk score, evidence IDs
+    Hash->>Hash: Generate SHA-256 digest: H(payload)
+    Hash->>Contract: registerThreat(urlHash, riskScore, evidenceDigest)
+    Contract->>Contract: Emit ThreatRegistered event on immutable block
+    Auditor->>Contract: getThreatProof(urlHash)
+    Contract-->>Auditor: Return on-chain anchored digest & block timestamp
+    Auditor->>Auditor: Recompute SHA-256 locally & compare
+    Note over Auditor: Exact Match Proves Non-Tampering & Auditability

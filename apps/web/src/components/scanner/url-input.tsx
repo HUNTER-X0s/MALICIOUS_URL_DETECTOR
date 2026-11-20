@@ -17,7 +17,7 @@ const SCAN_STAGES = [
 
 const SAMPLE_URLS = [
   { label: 'Phishing Lure', url: 'https://paypa1-security-verification.com/login', color: 'text-rose-400 border-rose-500/20 hover:bg-rose-500/5' },
-  { label: 'IP Anomaly',    url: 'http://198.51.100.22/update/account',           color: 'text-amber-400 border-amber-500/20 hover:bg-amber-500/5' },
+  { label: 'IP Anomaly',    url: 'http://45.33.32.156/update/account',            color: 'text-amber-400 border-amber-500/20 hover:bg-amber-500/5' },
   { label: 'Clean Domain',  url: 'https://github.com/security',                   color: 'text-emerald-400 border-emerald-500/20 hover:bg-emerald-500/5' },
 ];
 
@@ -82,9 +82,9 @@ export function UrlInput({ onScan, isLoading, loadingStep }: UrlInputProps) {
         <div
           className={`relative rounded-2xl transition-all duration-300 ${
             focused
-              ? 'ring-2 ring-indigo-500/40 shadow-glow-md'
-              : 'ring-1 ring-white/[0.08] shadow-glass'
-          } ${isLoading ? 'ring-indigo-500/30' : ''}`}
+              ? 'border border-indigo-500/30 shadow-glow-md'
+              : 'border border-white/[0.08] shadow-glass'
+          } ${isLoading ? 'border-indigo-500/20' : ''}`}
           style={{ background: 'rgba(15,17,23,0.75)', backdropFilter: 'blur(24px)' }}
         >
           {/* Scanning progress bar at top */}

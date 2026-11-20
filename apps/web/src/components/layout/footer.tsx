@@ -4,7 +4,7 @@ import { Shield, Lock, FileText, CheckCircle2, Terminal, ExternalLink, Github, H
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-white/[0.06] bg-[#030712] py-16 text-slate-400 text-sm relative overflow-hidden">
+    <footer className="w-full border-t border-white/[0.06] bg-[#030712] py-16 text-slate-400 text-base relative overflow-hidden">
       {/* Subtle top glow line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
 
@@ -18,16 +18,16 @@ export function Footer() {
               </div>
               <span className="font-bold text-white text-lg tracking-tight">URLSentinel</span>
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-sm">
               The high-assurance malicious URL detection platform. Engineered with SSRF isolation,
               lexical entropy modeling, threat feed provenance, and zero user-link retention.
             </p>
             <div className="flex flex-col gap-2 pt-2">
-              <div className="flex items-center gap-2 text-xs text-emerald-400 font-mono">
+              <div className="flex items-center gap-2 text-sm text-emerald-400 font-mono">
                 <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
                 <span>Zero User URL Logging / Strict Ephemeral RAM Analysis</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-indigo-400 font-mono">
+              <div className="flex items-center gap-2 text-sm text-indigo-400 font-mono">
                 <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
                 <span>Cryptographically Signed RFC 7515 Verdict Receipts</span>
               </div>
@@ -36,10 +36,10 @@ export function Footer() {
 
           {/* Defense Architecture */}
           <div>
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-mono font-bold text-white uppercase tracking-wider mb-4">
               Architecture
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/security#ssrf" className="hover:text-white transition-colors flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
@@ -69,10 +69,10 @@ export function Footer() {
 
           {/* Governance & Trust */}
           <div>
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-mono font-bold text-white uppercase tracking-wider mb-4">
               Trust & Ethics
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/privacy" className="hover:text-white transition-colors">
                   Privacy Policy
@@ -98,10 +98,10 @@ export function Footer() {
 
           {/* Developer & Integration */}
           <div>
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-mono font-bold text-white uppercase tracking-wider mb-4">
               Developers
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2.5 text-sm">
               <li>
                 <a
                   href="http://localhost:8000/docs"
@@ -131,11 +131,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar with Invariant Guarantee */}
-        <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p className="font-mono">
             © {new Date().getFullYear()} URLSentinel Organization. Built with Zero-Trust Security Engineering.
           </p>
-          <div className="flex items-center gap-4 font-mono text-[11px] text-slate-400">
+          <div className="flex items-center gap-4 font-mono text-xs text-slate-400">
             <span className="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">
               Honesty Invariant: No system can guarantee 100% detection.
             </span>

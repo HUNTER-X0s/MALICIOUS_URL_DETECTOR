@@ -1,0 +1,59 @@
+@startuml
+entity "SCAN_REQUEST" as req {
+  * id : UUID <<PK>>
+  --
+  canonical_url : TEXT
+  url_hash : VARCHAR(64)
+  client_ip : VARCHAR(45)
+  requested_at : TIMESTAMP
+  status : ENUM
+}
+
+entity "VERDICT_RECORD" as verd {
+  * id : UUID <<PK>>
+  --
+  scan_id : UUID <<FK>>
+  verdict : ENUM
+  risk_score : INT
+  confidence : ENUM
+  summary : TEXT
+  signed_digest : VARCHAR(64)
+}
+
+entity "BLOCKCHAIN_ANCHOR" as bchain {
+  * tx_hash : VARCHAR(66) <<PK>>
+  --
+  verdict_id : UUID <<FK>>
+  merkle_root : VARCHAR(64)
+  block_number : BIGINT
+  anchored_at : TIMESTAMP
+  contract_addr : VARCHAR(42)
+}
+
+entity "EVIDENCE_SIGNAL" as evid {
+  * id : UUID <<PK>>
+  --
+  verdict_id : UUID <<FK>>
+  layer : ENUM
+  signal_name : VARCHAR(50)
+  contribution : ENUM
+  description : TEXT
+  observed_at : TIMESTAMP
+  technical_metadata : JSONB
+}
+
+entity "THREAT_INTEL_ENTRY" as intel {
+  * id : UUID <<PK>>
+  --
+  indicator : TEXT
+  indicator_type : ENUM
+  source_feed : ENUM
+  threat_type : ENUM
+  is_active : BOOLEAN
+}
+
+req ||--|| verd : "generates"
+verd ||--o| bchain : "anchors"
+verd ||--|{ evid : "contains"
+intel }|--|{ verd : "correlates"
+@enduml

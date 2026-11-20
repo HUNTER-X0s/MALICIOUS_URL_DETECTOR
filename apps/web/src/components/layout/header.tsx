@@ -27,7 +27,7 @@ export function Header() {
           : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
 
         {/* ── Brand ── */}
         <Link href="/" className="flex items-center gap-3 group select-none">
@@ -46,7 +46,7 @@ export function Header() {
                 v1.0
               </span>
             </div>
-            <p className="text-[10px] text-slate-500 font-mono hidden sm:block mt-0.5">
+            <p className="text-xs sm:text-[11.5px] text-slate-300 font-medium tracking-wide block mt-0.5">
               Zero-Trust URL Defense
             </p>
           </div>

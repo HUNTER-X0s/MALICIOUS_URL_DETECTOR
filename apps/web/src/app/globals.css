@@ -96,6 +96,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: var(--deep-space);
   color: var(--text-primary);
+  font-size: 16.5px;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -565,10 +566,17 @@ body::after {
   border: none;
 }
 
-/* ── Focus styles (accessibility) ──────────────────────── */
+/* ── Focus styles (accessibility — keyboard nav only) ──────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--indigo-core);
   outline-offset: 2px;
+}
+
+/* Search input: suppress browser default focus ring (custom subtle border on wrapper handles it) */
+input[type="text"]:focus,
+input[type="text"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* ── Scrollbar ──────────────────────────────────────────── */

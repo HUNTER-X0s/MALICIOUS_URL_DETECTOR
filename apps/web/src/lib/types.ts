@@ -61,5 +61,11 @@ export interface SystemStats {
   average_latency_ms: number;
   active_rules_count: number;
   last_feed_sync: string;
+  clean_scans_today?: number;
+  ssrf_blocks_today?: number;
+  engine_status?: string;
+  uptime_seconds?: number;
+  last_scan_at?: string;
+  subsystems?: Record<string, string>;
 }
 

@@ -1,0 +1,13 @@
+flowchart TD
+    In[Canonical URL String] --> Parse[Decompose into Host, Path, Query]
+    Parse --> Entropy[Calculate Shannon Entropy on Host]
+    Parse --> Subdomain[Compute Subdomain Depth Anomaly]
+    Parse --> Proximity[Compute Levenshtein Brand Proximity]
+    Parse --> DGA[Evaluate Consonant & Vowel Ratios]
+    Parse --> Shortener[Check Known Shortener Services]
+    Entropy & Subdomain & Proximity & DGA & Shortener --> Trusted{Is Trusted SSO Domain?}
+    Trusted -->|Yes| Override[Zero Out False Positive Penalty]
+    Trusted -->|No| Matrix[Dot Product with Calibrated Weights]
+    Override --> Matrix
+    Matrix --> Sigmoid[Sigmoid Function P = 1 / 1 + exp -z]
+    Sigmoid --> Output[Emit Calibrated Score & Explanations]

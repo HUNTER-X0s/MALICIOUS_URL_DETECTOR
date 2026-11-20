@@ -1,0 +1,40 @@
+graph TD
+    subgraph Client Layer
+        Web[Web Dashboard - Next.js 15]
+        Ext[Browser Extension - Manifest V3]
+        API[Public REST API - FastAPI]
+    end
+
+    subgraph Security Perimeter
+        Nginx[Nginx Reverse Proxy & Rate Limiter]
+        SSRF[SSRF Defense Boundary - RFC 1918 / IMDS]
+    end
+
+    subgraph Multi-Layer Detection Pipeline
+        Norm[URL Normalizer - RFC 3986 / PSL Cache]
+        Lex[Lexical Analyzer - Shannon Entropy]
+        Homo[Homoglyph & Brand Engine - Levenshtein]
+        ML[ML Classifier v2.1 - Statistical Logistic Model]
+        TI[Threat Intel Ingestion - URLhaus / OpenPhish Cron]
+    end
+
+    subgraph Decision & Audit Layer
+        Verdict[Verdict Engine - Multi-Signal Aggregation]
+        Signer[Cryptographic Hash Digest Generator]
+        Cache[Redis / Memory Cache]
+        Chain[Blockchain Registry - ThreatRegistry.sol]
+    end
+
+    Web --> Nginx
+    Ext --> Nginx
+    API --> Nginx
+    Nginx --> SSRF
+    SSRF --> Norm
+    Norm --> Lex
+    Norm --> Homo
+    Norm --> ML
+    Norm --> TI
+    Lex & Homo & ML & TI --> Verdict
+    Verdict --> Signer
+    Verdict --> Cache
+    Signer --> Chain

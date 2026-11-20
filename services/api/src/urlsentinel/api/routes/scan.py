@@ -1,6 +1,7 @@
 """URL Scanning Endpoints for URLSentinel."""
 
 import dataclasses
+import time
 from datetime import datetime, timezone
 from typing import Dict, List, Any, Optional
 from fastapi import APIRouter, HTTPException, status
@@ -13,6 +14,7 @@ from ...core.feed_ingestion import query_threat_intel
 from ...core.dns_tls_inspector import inspect_tls_certificate
 from ...core.isolated_scanner import IsolatedScanner
 from ...core.verdict_engine import evaluate_verdict, VerdictOutput
+from ...core.telemetry import telemetry
 from ...schemas.scan import ScanRequest, VerdictResponse, ErrorResponse
 from ...cache.redis_cache import cache_manager
 
@@ -41,6 +43,7 @@ async def submit_scan(payload: ScanRequest):
     executes optional isolated DOM sandboxing, and renders an evidence-based verdict.
     """
     raw_url = payload.url.strip()
+    start_time = time.perf_counter()
 
     # Step 1: Enforce SSRF & Destination Safety Boundary
     try:
@@ -48,6 +51,7 @@ async def submit_scan(payload: ScanRequest):
             raw_url, resolve_dns=True
         )
     except SSRFBlockedError as e:
+        telemetry.record_ssrf_block()
         now_iso = datetime.now(timezone.utc).isoformat()
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -67,7 +71,10 @@ async def submit_scan(payload: ScanRequest):
     if not payload.request_deep_scan:
         # Check in-memory sync cache first
         if norm_url.url_hash in _SCAN_CACHE_BY_HASH:
-            return _SCAN_CACHE_BY_HASH[norm_url.url_hash]
+            cached_verdict = _SCAN_CACHE_BY_HASH[norm_url.url_hash]
+            elapsed_ms = (time.perf_counter() - start_time) * 1000
+            telemetry.record_scan(cached_verdict.verdict, elapsed_ms)
+            return cached_verdict
 
         # Check async Redis persistent cache
         cached_record = await cache_manager.get_verdict_by_hash(norm_url.url_hash)
@@ -75,6 +82,8 @@ async def submit_scan(payload: ScanRequest):
             verdict_obj = VerdictOutput(**cached_record)
             _SCAN_CACHE_BY_HASH[norm_url.url_hash] = verdict_obj
             _SCAN_CACHE_BY_ID[verdict_obj.id] = verdict_obj
+            elapsed_ms = (time.perf_counter() - start_time) * 1000
+            telemetry.record_scan(verdict_obj.verdict, elapsed_ms)
             return verdict_obj
 
     # Step 4: Lexical & Structural Feature Extraction
@@ -114,6 +123,10 @@ async def submit_scan(payload: ScanRequest):
         cert_details=cert_details,
         scanner_result=scanner_result,
     )
+
+    # Record execution telemetry
+    elapsed_ms = (time.perf_counter() - start_time) * 1000
+    telemetry.record_scan(verdict_out.verdict, elapsed_ms)
 
     # Cache result locally and persistently in Redis
     _SCAN_CACHE_BY_ID[verdict_out.id] = verdict_out

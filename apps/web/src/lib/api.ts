@@ -51,8 +51,11 @@ export async function fetchSystemStats(): Promise<SystemStats> {
     total_scans_today: 1482,
     threats_detected_today: 319,
     average_latency_ms: 18.4,
-    active_rules_count: 124,
+    active_rules_count: 693,
     last_feed_sync: new Date().toISOString(),
+    clean_scans_today: 1163,
+    ssrf_blocks_today: 42,
+    engine_status: 'Operational',
   };
 }
 

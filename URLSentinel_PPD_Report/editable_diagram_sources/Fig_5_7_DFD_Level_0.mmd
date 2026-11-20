@@ -1,0 +1,7 @@
+graph LR
+    User[Web User / Browser Extension] -->|1. Unverified Target URL| P0((0.0 URLSentinel Threat Platform))
+    P0 -->|2. Risk Score, Gauge & Warning| User
+    Feeds[External Threat Feeds URLhaus/OpenPhish] -->|3. Phishing/Malware IoC Feeds| P0
+    P0 -->|4. Signed Cryptographic Digest| Chain[Blockchain Threat Registry]
+    Analyst[Security Auditor / Analyst] -->|5. Query Verification Hash| P0
+    P0 -->|6. Cryptographic Provenance Receipt| Analyst

@@ -1,0 +1,10 @@
+graph TD
+    In[User URL] --> P1[1.0 Canonicalization & Normalization]
+    P1 -->|Clean URL| P2[2.0 SSRF & Destination IP Gate]
+    P2 -->|Public Origin| P3[3.0 Parallel Feature Extraction]
+    P3 -->|Entropy, Tokens, Brand Proximity| P4[4.0 ML Classifier v2.1]
+    P4 -->|Prediction & Attributions| P5[5.0 Multi-Signal Verdict Engine]
+    D1[(D1: Threat Feed Cache)] -->|Known Signatures| P5
+    P5 -->|Final Verdict| P6[6.0 Cryptographic Digest & Blockchain Anchoring]
+    P5 -->|Cache Result| D2[(D2: Redis Scan Store)]
+    P6 --> Out[Signed Risk Receipt & User UI]

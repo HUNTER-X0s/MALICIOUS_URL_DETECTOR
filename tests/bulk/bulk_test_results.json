@@ -1,0 +1,575 @@
+{
+  "summary": {
+    "total": 2000,
+    "phishing": 1000,
+    "benign": 1000,
+    "tp": 943,
+    "fp": 0,
+    "tn": 1000,
+    "fn": 57,
+    "accuracy": 0.9715,
+    "precision": 1.0,
+    "recall_tpr": 0.943,
+    "fpr": 0.0,
+    "f1": 0.9707,
+    "threshold": 0.5,
+    "per_url_ms": 1.287
+  },
+  "per_category": {
+    "phishing_dga": {
+      "total": 80,
+      "correct": 76,
+      "tp": 76,
+      "fp": 0,
+      "tn": 0,
+      "fn": 4
+    },
+    "phishing_brand_subdomain": {
+      "total": 120,
+      "correct": 120,
+      "tp": 120,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "benign_subdomain": {
+      "total": 100,
+      "correct": 100,
+      "tp": 0,
+      "fp": 0,
+      "tn": 100,
+      "fn": 0
+    },
+    "benign_query": {
+      "total": 100,
+      "correct": 100,
+      "tp": 0,
+      "fp": 0,
+      "tn": 100,
+      "fn": 0
+    },
+    "phishing_generic": {
+      "total": 95,
+      "correct": 95,
+      "tp": 95,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "phishing_at_lure": {
+      "total": 50,
+      "correct": 50,
+      "tp": 50,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "benign_www": {
+      "total": 150,
+      "correct": 150,
+      "tp": 0,
+      "fp": 0,
+      "tn": 150,
+      "fn": 0
+    },
+    "phishing_tld_keyword": {
+      "total": 70,
+      "correct": 70,
+      "tp": 70,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "phishing_typosquat": {
+      "total": 100,
+      "correct": 97,
+      "tp": 97,
+      "fp": 0,
+      "tn": 0,
+      "fn": 3
+    },
+    "benign_simple": {
+      "total": 400,
+      "correct": 400,
+      "tp": 0,
+      "fp": 0,
+      "tn": 400,
+      "fn": 0
+    },
+    "phishing_hex_encoded": {
+      "total": 50,
+      "correct": 50,
+      "tp": 50,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "phishing_keyword_rich": {
+      "total": 100,
+      "correct": 100,
+      "tp": 100,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "benign_root": {
+      "total": 235,
+      "correct": 235,
+      "tp": 0,
+      "fp": 0,
+      "tn": 235,
+      "fn": 0
+    },
+    "phishing_hyphen_lure": {
+      "total": 100,
+      "correct": 100,
+      "tp": 100,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "phishing_subdomain_stuffing": {
+      "total": 100,
+      "correct": 100,
+      "tp": 100,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "phishing_shorturl": {
+      "total": 50,
+      "correct": 0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 0,
+      "fn": 50
+    },
+    "phishing_ip_host": {
+      "total": 80,
+      "correct": 80,
+      "tp": 80,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "phishing_punycode": {
+      "total": 5,
+      "correct": 5,
+      "tp": 5,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "benign_auth_edge": {
+      "total": 15,
+      "correct": 15,
+      "tp": 0,
+      "fp": 0,
+      "tn": 15,
+      "fn": 0
+    }
+  },
+  "false_negatives": [
+    {
+      "url": "https://paypa.l.co/confirm-identity",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.0773,
+      "category": "phishing_typosquat",
+      "correct": false
+    },
+    {
+      "url": "https://paypa.l.co/login",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.1043,
+      "category": "phishing_typosquat",
+      "correct": false
+    },
+    {
+      "url": "http://oi8uyyf1irym8.com/login",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.1203,
+      "category": "phishing_dga",
+      "correct": false
+    },
+    {
+      "url": "http://goo.gl/bawyqm",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://tinyurl.com/ogbjzeyq",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://goo.gl/bawyqm",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://tinyurl.com/ogbjzeyq",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://goo.gl/bawyqm",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://goo.gl/bawyqm",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://ow.ly/qcxzp",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://tinyurl.com/ogbjzeyq",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://goo.gl/bawyqm",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://ow.ly/qcxzp",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://goo.gl/bawyqm",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://tinyurl.com/ogbjzeyq",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://ow.ly/qcxzp",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://tinyurl.com/ogbjzeyq",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://goo.gl/bawyqm",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://tinyurl.com/ogbjzeyq",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://tinyurl.com/ogbjzeyq",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://tinyurl.com/ogbjzeyq",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://ow.ly/qcxzp",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://ow.ly/qcxzp",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.2891,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://t.co/o1en1s2ofh",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3359,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    },
+    {
+      "url": "http://bit.ly/5txc066",
+      "true_label": 1,
+      "predicted_label": 0,
+      "probability": 0.3554,
+      "category": "phishing_shorturl",
+      "correct": false
+    }
+  ],
+  "false_positives": []
+}
